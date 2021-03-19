@@ -1,27 +1,56 @@
+let FirstName = ['Alroq', 'Blorg', 'Biskhe', 'Chshork', 'Dwshbug', 'Equois', 'Flaqios', 'Goimnhs', 'Homucolus', 'Ijhkoh', 'Koogoh', 'Lozash', 'Maklower', 'Nohghot', 'Ohmuh', 'Puerisho', 'Qhwushtob', 'Ragor', 'Shklim', 'Thimus', 'Udohedn', 'Vario', 'Xhjoohjo', 'Ymider', 'Zzhackro'];
+let LastName = ['Alroq', 'Blorg', 'Biskhe', 'Chshork', 'Dwshbug', 'Equois', 'Flaqios', 'Goimnhs', 'Homucolus', 'Ijhkoh', 'Koogoh', 'Lozash', 'Maklower', 'Nohghot', 'Ohmuh', 'Puerisho', 'Qhwushtob', 'Ragor', 'Shklim', 'Thimus', 'Udohedn', 'Vario', 'Xhjoohjo', 'Ymider', 'Zzhackro'];
+
+let fi;
+let la;
+
+let rc;
+let gc;
+let bc;
+
+let nms;
+
 function setup() {
+  background(220);
   createCanvas(400, 400);
-}
+  frameRate(60);
+  intText();
+  fortBall();
+  }
 
 function draw() {
-  background(220);
-  circle(200, 200, 140);
-  
-textSize(16);
-strokeWeight(0.5);
 
-line(0, 50, width, 50);
-textAlign(CENTER, TOP);
-text('Your name', 0, 60, width);
+  }
+function mousePressed () {
+  if (mouseX < width*0.65 && mouseX > width*0.30 && mouseY < height*0.65 && mouseY > height*0.30) {
+      fi = int(random(FirstName.length));
+      la = int(random(LastName.length));
+      nmes = FirstName[fi] + ' ' + LastName[la] + ' ';
+      rc = random(255);
+      gc = random(255);
+      bc = random(255);
+      fortText();
+      console.log(nmes);
 
-line(0, 100, width, 100);
-textAlign(CENTER, CENTER);
-text('is', 0, 85, width);
+      }
 
-line(0, 300, width, 300);
-textAlign(CENTER, BASELINE);
-text('First Name', 0, 300, width);
+}
+function fortBall() {
+  fill(rc, gc, bc);
+  ellipse(width*0.5, height*0.5, 100);
 
-line(0, 350, width, 350);
-textAlign(CENTER, BOTTOM);
-text('Last Name', 0, 350, width);
+}
+
+function intText() {
+  fill (255);
+  textAlign(CENTER);
+  text('Your alien name is', width*0.5, height*0.3);
+}
+function fortText() {
+  background(0);
+  intText();
+  fortBall();
+  fill(255);
+  textAlign(CENTER);
+  text(nmes, width*0.5, height*0.7);
 }
