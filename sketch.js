@@ -6,23 +6,29 @@ let la;
 
 let rc;
 let gc;
-let bc;
+let bc; 
 
 let nms;
 
+let button;
+
 function setup() {
   background(220);
-  createCanvas(400, 400);
+  var canvas = createCanvas(400, 400);
+  canvas.parent('sketch-holder');
+  button = createButton('CLICK ME!');
+  button.parent('button-holder');
+  button.mousePressed(buttonPressed);
   frameRate(60);
   intText();
   fortBall();
   }
 
 function draw() {
-
+  
   }
-function mousePressed () {
-  if (mouseX < width*0.65 && mouseX > width*0.30 && mouseY < height*0.65 && mouseY > height*0.30) {
+function buttonPressed () {
+
       fi = int(random(FirstName.length));
       la = int(random(LastName.length));
       nmes = FirstName[fi] + ' ' + LastName[la] + ' ';
@@ -31,14 +37,13 @@ function mousePressed () {
       bc = random(255);
       fortText();
       console.log(nmes);
-
-      }
-
+    
+  
 }
 function fortBall() {
   fill(rc, gc, bc);
   ellipse(width*0.5, height*0.5, 100);
-
+  
 }
 
 function intText() {
@@ -53,4 +58,8 @@ function fortText() {
   fill(255);
   textAlign(CENTER);
   text(nmes, width*0.5, height*0.7);
+}
+function changeBG() {
+  let val = random(255);
+  background(val);
 }
