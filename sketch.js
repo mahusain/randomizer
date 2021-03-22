@@ -6,7 +6,7 @@ let la;
 
 let rc;
 let gc;
-let bc; 
+let bc;
 
 let nms;
 
@@ -25,7 +25,7 @@ function setup() {
   }
 
 function draw() {
-  
+
   }
 function buttonPressed () {
 
@@ -37,13 +37,13 @@ function buttonPressed () {
       bc = random(255);
       fortText();
       console.log(nmes);
-    
-  
+
+
 }
 function fortBall() {
   fill(rc, gc, bc);
   ellipse(width*0.5, height*0.5, 100);
-  
+
 }
 
 function intText() {
@@ -58,8 +58,4 @@ function fortText() {
   fill(255);
   textAlign(CENTER);
   text(nmes, width*0.5, height*0.7);
-}
-function changeBG() {
-  let val = random(255);
-  background(val);
 }
